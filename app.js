@@ -5,7 +5,7 @@ const postControllers = require("./controllers/postControllers");
 const pageControllers = require("./controllers/pageControllers");
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 5000;
 
 mongoose
   .connect(
