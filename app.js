@@ -7,7 +7,20 @@ const pageControllers = require("./controllers/pageControllers");
 const app = express();
 const port = 3000;
 
-mongoose.connect("mongodb://localhost/cleanblog-test-db");
+mongoose
+  .connect(
+    "mongodb+srv://yusuf:allah1@etsyfetch.vaunvnx.mongodb.net/cleanblog-test-db?retryWrites=true&w=majority",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
+  .then(() => {
+    console.log("Connected To Database");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 // MIDDLEWARE
 
